@@ -201,3 +201,5 @@ NSString *version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
 * `NSCache` is like `NSMutableDictionary` but with builtin memory management.
 
 * use `stringByEvaluatingJavascriptFromString:` to communicate with javascript.
+
+* use `+ (void)load` if u want to perform some init work on a category.
