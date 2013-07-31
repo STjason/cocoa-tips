@@ -58,7 +58,7 @@ cell.selectionStyle = UITableViewCellSelectionStyleNone;
 UILabel
 -------
 
-# `sizeToFit` will shrink label's additional area, set `numberOfLines` to 0 means unlimited number of lines(multiple line). [via](http://stackoverflow.com/q/1054558/94962)
+* `sizeToFit` will shrink label's additional area, set `numberOfLines` to 0 means unlimited number of lines(multiple line). [via](http://stackoverflow.com/q/1054558/94962)
 
 
 NSArray
