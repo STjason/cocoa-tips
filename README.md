@@ -192,3 +192,12 @@ NSString *version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
 
 * Variable inside block are retained, so if the block is retained by `self`, u should use `weakSelf` inside this block.
 
+* u can use `keychain` to save secure data like username/password, thus even the app is uninstalled, the data is still there.
+
+* use `forwardingTargetForSelector:` to redirect unknown message to new target.
+
+* set `name` to `nil` and `object` to `nil` to spy all notifications.
+
+* `NSCache` is like `NSMutableDictionary` but with builtin memory management.
+
+* use `stringByEvaluatingJavascriptFromString:` to communicate with javascript.
