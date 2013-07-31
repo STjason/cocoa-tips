@@ -4,7 +4,7 @@ COCOA-TIPS
 UIColor
 -------
 
-**Tile image to background**
+### Tile image to background
 
 it's a bit weird this method belongs to `UIColor` not `UIImage`
 ```
@@ -15,7 +15,7 @@ view.backgroundColor = [UIColor colorWithPatternImage:backgroundPattern];
 UIImage
 -------
 
-**Generate animated images like GIF**
+### Generate animated images like GIF
 
 ```
 UIImage *section1 = [UIImage imageNamed:@"image1.png"];
@@ -25,7 +25,7 @@ UIImage *animatedImage = [UIImage animatedImageWithImages:@{section1, section2} 
 // u can use `[UIImage animatedImageNamed:(NSString *)name duration:(NSTimeInterval)duration]` as well
 ```
 
-**Get first image from animated image**
+### Get first image from animated image
 
 Suppose u use `SDWebImage` to download a bunch of GIFs, and put them to a scrollView, the app will become very slow, so it's better to just show first image as a preview.
 
@@ -38,14 +38,14 @@ NSString
 
 `UIKit` add some methods to `NSString` to make it easier to process certain tasks.
 
-**Calculate string's size**
+### Calculate string's size
 
 ```
 NSString *title = @"Foobar";
 CGSize titleSize = [title sizeWithFont:[UIFont systemFontOfSize:14]];
 ```
 
-**draw string**
+### draw string
 
 to reduce UIView's hierarchy, sometimes its convenience to draw all the content in `drawRect` method
 
