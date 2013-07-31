@@ -188,7 +188,7 @@ NSString *version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
 
 * If an object is designed to be able to write to disk, it must implement `NSCoding` protocol.
 
-* `NSAssert` is used more then 'NSException'
+* `NSAssert` is used more then `NSException`
 
 * Variable inside block are retained, so if the block is retained by `self`, u should use `weakSelf` inside this block.
 
