@@ -1,6 +1,17 @@
 COCOA-TIPS
 ==========
 
+UIView
+------
+
+### Get subview by tag
+```
+UIView *subview = [[UIView alloc] init];
+subview.tag = 1;
+[self addSubview:subview];
+[self viewWithTag:1]; // return subview
+```
+
 UIColor
 -------
 
