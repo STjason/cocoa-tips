@@ -143,6 +143,18 @@ NSString *str = [NSString stringWithUTF8String:[data bytes]];
 ```
 
 
+NSDate
+------
+
+### Convert timestamp to NSDate
+```
+[NSDate dateWithTimeIntervalSince1970:timeStamp];
+
+// convert NSDate to timestamp
+- (NSTimeInterval)timeIntervalSince1970
+```
+
+
 Grand Central Dispatch (GCD)
 ----------------------------
 
