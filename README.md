@@ -156,6 +156,23 @@ dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
 });
 ```
 
+Key Value Coding (KVC)
+----------------------
+
+### KVC can automatically convert `NSNumber` to primitive value like `NSInteger`
+```
+#import <Foundation/Foundation.h>
+@interface People : NSObject
+@property (nonatomic, assign) NSInteger age;
+@end
+
+@implementation People @end
+
+People *people = [[People alloc] init];
+[people setValue:@(18) forKey:@"age"];
+NSLog(@"people.age:%i", people.age);
+```
+
 
 Miscellaneous
 -------------
@@ -227,4 +244,3 @@ timer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self
 * use `stringByEvaluatingJavascriptFromString:` to communicate with javascript.
 
 * use `+ (void)load` if u want to perform some init work on a category.
-
