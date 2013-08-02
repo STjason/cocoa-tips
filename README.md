@@ -256,3 +256,5 @@ timer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self
 * use `stringByEvaluatingJavascriptFromString:` to communicate with javascript.
 
 * use `+ (void)load` if u want to perform some init work on a category.
+
+* `nil` is like black hole, u can send any message to it without exception, while `NSNull` is like empty `NSObject`.
