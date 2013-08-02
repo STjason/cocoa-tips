@@ -197,6 +197,19 @@ NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
 NSString *version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
 ```
 
+### Create repeating and non-repeating timers
+
+```
+NSTimer *timer;
+
+// set `repeats` to NO if u don't want it to be repeated 
+timer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self 
+   selector:@selector(updateActivityIndicator:) userInfo:nil repeats:YES];
+
+// stop the timer
+[timer invalidate];
+```
+
 * If an object is designed to be able to write to disk, it must implement `NSCoding` protocol.
 
 * `NSAssert` is used more then `NSException`
@@ -214,3 +227,4 @@ NSString *version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
 * use `stringByEvaluatingJavascriptFromString:` to communicate with javascript.
 
 * use `+ (void)load` if u want to perform some init work on a category.
+
