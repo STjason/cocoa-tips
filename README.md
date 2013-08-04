@@ -57,6 +57,25 @@ Suppose u use `SDWebImage` to download a bunch of GIFs, and put them to a scroll
 UIImage *firstImage = animatedImage.images[0];
 ```
 
+### Merging two images of different size [via](http://stackoverflow.com/q/9208951/94962)
+```
+UIImage *bottomImage = [UIImage imageNamed:@"bottom.png"]; //background image
+UIImage *image       = [UIImage imageNamed:@"top.png"]; //foreground image
+
+CGSize newSize = CGSizeMake(width, height);
+UIGraphicsBeginImageContext( newSize );
+
+// Use existing opacity as is
+[bottomImage drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+
+// Apply supplied opacity if applicable
+[image drawInRect:CGRectMake(0,0,newSize.width,newSize.height) blendMode:kCGBlendModeNormal alpha:0.8];
+
+UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+
+UIGraphicsEndImageContext();
+```
+
 UITableView
 -----------
 
