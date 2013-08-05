@@ -207,6 +207,18 @@ NSLog(@"people.age:%i", people.age);
 
 Miscellaneous
 -------------
+### use `DLog` instead of `NSLog`
+when not in debug mode, it won't print anything.
+```
+#ifdef DEBUG
+#   define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+#else
+#   define DLog(...)
+#endif
+ 
+// ALog always displays output regardless of the DEBUG setting
+#define ALog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+```
 
 ### Invoke a method of the receiver even it is private.
 ```
