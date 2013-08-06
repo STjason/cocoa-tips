@@ -89,6 +89,11 @@ UITableView
 cell.selectionStyle = UITableViewCellSelectionStyleNone;
 ```
 
+### Set Selected row's text color [via](http://stackoverflow.com/q/5841056/94962)
+```
+cell.textLabel.highlightedTextColor = [UIColor redColor];
+```
+
 
 UILabel
 -------
