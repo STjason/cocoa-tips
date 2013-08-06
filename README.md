@@ -260,20 +260,17 @@ static char  ObjectTagKey;
 ```
 
 ### Register a custom app opening URL scheme
-
 ```
 edit info.plist, add "URL types" section, add "URL Schemes" sub section.
 ```
 
 ### Get current app version
-
 ```
 NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
 NSString *version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
 ```
 
 ### Create repeating and non-repeating timers
-
 ```
 NSTimer *timer;
 
@@ -283,6 +280,13 @@ timer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self
 
 // stop the timer
 [timer invalidate];
+```
+
+### Compare string version
+```
+if ([onlineVersion compare:currentAppVersion options:NSNumericSearch] == NSOrderedDescending) {
+	newAppVersion = onlineVersion;
+}
 ```
 
 * If an object is designed to be able to write to disk, it must implement `NSCoding` protocol.
