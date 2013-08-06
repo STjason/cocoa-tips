@@ -3,7 +3,6 @@ COCOA-TIPS
 
 UIView
 ------
-
 ### Get subview by tag
 ```
 UIView *subview = [[UIView alloc] init];
@@ -14,7 +13,6 @@ subview.tag = 1;
 
 UIColor
 -------
-
 ### Tile image to background
 it's a bit weird this method belongs to `UIColor` not `UIImage`
 ```
@@ -25,16 +23,24 @@ view.backgroundColor = [UIColor colorWithPatternImage:backgroundPattern];
 
 UIButton
 --------
-
 ### Padding a UIButton's title [via](http://blog.daveworld.net/2011/03/how-to-add-padding-to-uibuttons-title.html)
 ```
 button1.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 5);
 ```
 
+### increase tapable area of UIButton
+```
+UIImage *image = [UIImage imageNamed:@"button.png"];
+UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+[button setImage:backImage forState:UIControlStateNormal];
+[button addTarget:self.delegate action:@selector(buttonTapped) forControlEvents:UIControlEventTouchUpInside];
+// u can set tapable area here, it won't strench image
+backButton.frame = CGRectMake(8, 5, image.size.width + 10, image.size.height + 10);
+```
+
 
 UIImage
 -------
-
 ### Generate animated images like GIF
 ```
 UIImage *section1 = [UIImage imageNamed:@"image1.png"];
@@ -78,7 +84,6 @@ UIGraphicsEndImageContext();
 
 UITableView
 -----------
-
 ### Disable selection highlighting
 ```
 cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -87,13 +92,11 @@ cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
 UILabel
 -------
-
 * `sizeToFit` will shrink label's additional area, set `numberOfLines` to 0 means unlimited number of lines(multiple line). [via](http://stackoverflow.com/q/1054558/94962)
 
 
 NSArray
 -------
-
 ### Filter array
 ```
 NSArray *arr = @[@"hello", @"world", @"foo", @"bar"];
@@ -120,7 +123,6 @@ sortedArray = [drinkDetails sortedArrayUsingComparator:^NSComparisonResult(id a,
 
 NSString
 --------
-
 `UIKit` add some methods to `NSString` to make it easier to process certain tasks.
 
 ### Calculate string's size
@@ -153,7 +155,6 @@ NSLog(@"contains 'll'?: %i", [string rangeOfString:@"ll"].location != NSNotFound
 
 NSData
 ------
-
 ### Encode a string to NSData and Decode back [via](http://stackoverflow.com/q/901357/94962)
 ```
 NSString *originStr = @"teststring";
@@ -164,7 +165,6 @@ NSString *str = [NSString stringWithUTF8String:[data bytes]];
 
 NSDate
 ------
-
 ### Convert timestamp to NSDate
 ```
 [NSDate dateWithTimeIntervalSince1970:timeStamp];
