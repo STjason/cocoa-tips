@@ -152,6 +152,13 @@ NSString *string = @"Hello World!";
 NSLog(@"contains 'll'?: %i", [string rangeOfString:@"ll"].location != NSNotFound);
 ```
 
+### Trim string
+```
+NSString *string = @" this text has spaces before and after ";
+NSString *trimmedString = [string stringByTrimmingCharactersInSet:
+                                  [NSCharacterSet whitespaceCharacterSet]];
+```
+
 
 NSData
 ------
