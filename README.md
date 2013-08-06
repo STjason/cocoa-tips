@@ -169,6 +169,14 @@ NSData *data = [originStr dataUsingEncoding:NSUTF8StringEncoding];
 NSString *str = [NSString stringWithUTF8String:[data bytes]];
 ```
 
+### Convert UIImage to NSData
+```
+UIImage *image = [UIImage imageNamed:@"image.jpg"];
+NSData *data = UIImageJPEGRepresentation(image, 1.0);
+// if u want to convert to png
+NSData *data = UIImagePNGRepresentation(image);
+```
+
 
 NSDate
 ------
