@@ -164,6 +164,12 @@ NSString *trimmedString = [string stringByTrimmingCharactersInSet:
                                   [NSCharacterSet whitespaceCharacterSet]];
 ```
 
+### Replace string
+```
+NSString * myString = @"Hello,";
+NSString * newString = [myString stringByReplacingOccurrencesOfString:@"," withString:@""];
+NSLog(@"%@xx",newString);
+```
 
 NSData
 ------
