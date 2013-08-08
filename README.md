@@ -300,6 +300,20 @@ if ([onlineVersion compare:currentAppVersion options:NSNumericSearch] == NSOrder
 }
 ```
 
+### Write multiple line of macro [via](http://www.mikeash.com/pyblog/friday-qa-2013-05-03-proper-use-of-asserts.html)
+```
+#define MAAssert(expression, ...) \
+	do { \
+		if(!(expression)) { \
+			NSString *__MAAssert_temp_string = [NSString stringWithFormat: @"Assertion failure: %s in %s on line %s:%d. %@", #expression, __func__, __FILE__, __LINE__, [NSString stringWithFormat: @"" __VA_ARGS__]]; \
+			NSLog(@"%@", __MAAssert_temp_string); \
+			__crashreporter_info__ = [__MAAssert_temp_string UTF8String]; \
+			abort(); \
+		} \
+	} while(0)
+```
+
+
 * If an object is designed to be able to write to disk, it must implement `NSCoding` protocol.
 
 * `NSAssert` is used more then `NSException`
